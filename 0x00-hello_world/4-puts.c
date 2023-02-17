@@ -1,8 +1,8 @@
-#iclude < studio.h >
+#include <stdio.h>
 
-int main(int argc, char *argv[]);
+int main(int argc, char *argv[])
 {
-	char str[] = \"Programming is like building a multilingual puzzle\n;
+	char str[] = "\"Programming is like building a multilingual puzzle\n";
 		puts(str);
-		return value (0);
+		return (0);
 }
