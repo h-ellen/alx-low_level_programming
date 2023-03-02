@@ -1,4 +1,5 @@
 #include "main.h"
+#define NULL 0
 
 /**
  * _strncpy - check the code for Holberton School students.
@@ -8,21 +9,14 @@
  * Return: Always 0.
  */
 
-char *_strncpy( char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	if (dest == NULL && src == NULL)
-	{
-		return NULL;
-	}
+	int i;
 
-	char *start = dest;
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+	for ( ; i < n; i++)
+		dest[i] = '\0';
 
-	while (*src && n--)
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	
-	return start;
+	return (dest);
 }
