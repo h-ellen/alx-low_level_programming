@@ -8,22 +8,21 @@
  * Return: Always 0.
  */
 
-char *_strncpy(char *dest, char *src, int n)
+char *_strncpy( char *dest, char *src, int n)
 {
-	int a = 0;
-	int b = 0;
-
-	while (a != n)
+	if (dest == NULL && src == NULL)
 	{
-		dest[b] = src[a];
-		b++;
-		a++;
-		if (src[a] == '\0')
-		{
-			break;
-		}
+		return NULL;
 	}
-	while (b != n)
-		dest[b++] = '\0';
-	return (dest);
+
+	char *start = dest;
+
+	while (*src && n--)
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	
+	return start;
 }
